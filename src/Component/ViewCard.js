@@ -3,17 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-// import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-// import image from '../assets/pic.png'
-// import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-// import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-// import SkipNextIcon from '@material-ui/icons/SkipNext';
 
 const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
-    marginTop: "10px"
+    marginTop: "10px",
   },
   details: {
     display: 'flex',
@@ -23,7 +18,8 @@ const useStyles = makeStyles(() => ({
     flex: '1 0 auto',
   },
   cover: {
-    width: 151,
+    width: 500,
+    // height:200
   },
   controls: {
     display: 'flex',
@@ -44,7 +40,7 @@ const useStyles = makeStyles(() => ({
 export default function ViewCard(props) {
   const classes = useStyles();
   // const theme = useTheme();
-  console.log(props.data.getPackages.result.packages,"ddd")
+  // console.log(props.data.getPackages.result.packages,"ddd")
   return (
     <>
       {props.data.getPackages.result.packages.map(item => {
@@ -53,22 +49,21 @@ export default function ViewCard(props) {
             <CardMedia
               className={classes.cover}
               image={item.thumbnail}
-              title="Live from space album cover"
             />
             <div className={classes.details}>
               <CardContent className={classes.content}>
-                <Typography component="h6" variant="h6">
+                <h4>
                   {item.title}
-                </Typography>
-                <Typography variant="subtitle1" color="textSecondary">
+                </h4>
+                <p>
                   {item.description}
-                </Typography>
+                </p>
               </CardContent>
             </div>
           </Card>
           <div className={classes.controls}>
             <Typography component="h5" variant="h5">
-              ${item.startingPrice}
+              ৳{item.startingPrice}
             </Typography>
           </div>
         </div>

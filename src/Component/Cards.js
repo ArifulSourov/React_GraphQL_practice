@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react'
+import { makeStyles } from '@material-ui/core/styles';
 import ViewCard from './ViewCard'
 import * as Constants from "../constants"
 import axios from 'axios'
 
+const useStyles = makeStyles(() => ({
+    root: {
+      margin: "10px",
+    },
+  }));
+
 export default function Cards() {
+    const classes = useStyles();
     const [data, setData] = useState([])
     useEffect(() => {
         const fetchData = async () => {
@@ -18,24 +26,9 @@ export default function Cards() {
         }
         fetchData();
     }, [])
-
-    //console.log(data.getPackages.result.packages,"ddd")
-    // const items = data.getPackages.result.packages.map((item) => {
-    //     <li key={item.uid}>
-    //         <p>{item.title}</p>
-    //     </li>
-    // })
     return (
-        <div>
+        <div className={classes.root}>
             <ViewCard data={data}/>
-            {/* <h1>ttttttttttt</h1>
-            <ul>
-                {data.getPackages.result.packages.map(item => {
-                    return (<li key={item.uid}>
-                        {item.title}
-                    </li>)
-                })}
-            </ul> */}
         </div>
     )
 }
