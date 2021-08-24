@@ -4,8 +4,8 @@ export const GET_DATA = `
 {
     getPackages(
       pagination: {
-        skip: 0
-        limit: 10
+        skip: 4
+        limit: 4
       }
     )
     {

@@ -7,10 +7,15 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+        backgroundColor: "white"
     },
     title: {
         flexGrow: 0,
+        color: "midnightblue",
     },
+    colors: {
+        backgroundColor: "white"
+    }
 }));
 
 
@@ -19,10 +24,10 @@ export default function Header() {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static">
+            <AppBar position="static" className={classes.colors}>
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
-                        FLIGHTLOCAL
+                        <b>FLIGHT</b>LOCAL
                     </Typography>
                 </Toolbar>
             </AppBar>

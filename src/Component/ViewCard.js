@@ -19,26 +19,27 @@ const useStyles = makeStyles(() => ({
   },
   cover: {
     width: 300,
-    // height:200
+    height: 120,
   },
   controls: {
     display: 'flex',
     justifyContent: 'flex-end',
-    backgroundColor: "navy",
+    backgroundColor: "midnightblue",
     color: "white",
     fontSize: "20px",
+    // fontFamily: "Arial, Helvetica, sans-serif",
   },
   control: {
     display: 'flex',
     justifyContent: 'flex-end',
-    backgroundColor: "navy",
+    backgroundColor: "midnightblue",
     color: "white",
     fontSize: "10px",
   },
   icons: {
     display: 'flex',
     justifyContent: 'flex-start',
-    backgroundColor: "navy",
+    backgroundColor: "midnightblue",
     color: "gold",
     fontSize: "10px",
   },
@@ -53,12 +54,11 @@ const useStyles = makeStyles(() => ({
   gridContainer: {
     display: "grid",
     gridTemplateColumns: "auto auto auto",
-    backgroundColor: "navy",
+    backgroundColor: "midnightblue",
     padding: "10px",
+    height: "30px",
   },
   gridItem: {
-    // display: 'flex',
-    // justifyContent: 'flex-start',
     fontSize: "10px",
     color: "gold",
     textAlign: "center"
@@ -67,8 +67,9 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "flex-start",
     textAlign: "justify",
-    color: "navy",
-    fontSize: "18px",
+    color: "midnightblue",
+    fontSize: "12px",
+    marginTop: "-15px"
   },
   description: {
     display: "flex",
@@ -76,14 +77,22 @@ const useStyles = makeStyles(() => ({
     textAlign: "justify",
     color: "black",
     fontSize: "10px",
+    marginTop: "-10px"
+
   },
   duration: {
     display: "flex",
-    color: "navy",
+    color: "midnightblue",
     fontSize: "12px",
+    marginTop: "-5px"
+
   },
   container: {
-    // height: "300px",
+    width: "100%",
+    borderRadius: "15px",
+  },
+  lowerDIv: {
+    marginTop: "-33px",
   }
 }));
 
@@ -118,9 +127,7 @@ export default function ViewCard(props) {
             </div>
           </Card>
 
-          <div>
-
-            {/* {console.log(item.amenities[0].icon)} */}
+          <div className={classes.lowerDIv}>
             <div className={classes.gridContainer}>
               <div className={classes.icons}>Includes:</div>
               <div className={classes.gridItem}></div>
@@ -128,12 +135,6 @@ export default function ViewCard(props) {
                 <Typography className={classes.control}>Starts From</Typography>
               </div>
               <div className={classes.gridItem}>
-                {/* {item.amenities.map((icons) => {
-                  <CardMedia
-                    image={icons.icon}
-                  />
-                  { console.log(icons) }
-                })} */}
               </div>
               <div className={classes.gridItem}></div>
               <div>
